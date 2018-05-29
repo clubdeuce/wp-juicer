@@ -25,7 +25,7 @@ class testHttp extends TestCase {
 	 * @covers ::fetch
 	 */
 	public function testFetch() {
-		$response = $this->_http->fetch( 'https://wordpress.org');
+		$response = $this->_http->fetch( 'http://wordpress.org');
 
 		$this->assertInternalType('string', $response);
 	}
@@ -34,7 +34,7 @@ class testHttp extends TestCase {
 	 * @covers ::fetch
 	 */
 	public function testFetchCache() {
-		$response = $this->_http->fetch( 'https://wordpress.org');
+		$response = $this->_http->fetch( 'http://wordpress.org');
 
 		$this->assertInternalType('string', $response);
 	}

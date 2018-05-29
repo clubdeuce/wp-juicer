@@ -42,7 +42,7 @@ class testJuicer extends TestCase {
 	 * @covers ::_url_params
 	 */
 	public function testGetFeed() {
-		$feed = Juicer::get_feed(array('per' => 2));
+		$feed = Juicer::get_feed(array('per' => 2), 'http');
 
 		$this->assertInstanceOf(Feed::class, $feed);
 		$this->assertCount(2, $feed->posts());
@@ -75,8 +75,6 @@ class testJuicer extends TestCase {
 	 * @return bool
 	 */
 	public function _errorHandler() {
-
 		return true;
-
 	}
 }
