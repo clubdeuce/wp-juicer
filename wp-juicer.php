@@ -62,6 +62,7 @@ class Juicer {
 		unset( $args['feed'] );
 
 		$api_url = sprintf( '%1$s://%2$s/feeds/%3$s?%4$s', $scheme, self::$_base_url, $feedname, self::_url_params( $args ) );
+		$key     = md5( $api_url );
 
 		$response = $http->fetch( $api_url );
 
@@ -74,11 +75,11 @@ class Juicer {
 					$response->get_error_code()
 				), E_USER_WARNING );
 
-				$response = get_transient( 'wp-juicer' );
+				$response = get_transient( $key );
 				break;
 			}
 
-			set_transient( 'wp-juicer', json_encode( $response ) );
+			set_transient( $key, json_encode( $response ) );
 
 		} while ( false );
 
@@ -94,6 +95,15 @@ class Juicer {
 	public static function set_default_feed( $feed ) {
 
 		static::$_default_feed = $feed;
+
+	}
+
+	/**
+	 * @return string
+	 */
+	public static function default_feed() {
+
+		return static::$_default_feed;
 
 	}
 
@@ -114,6 +124,5 @@ class Juicer {
 		return implode( '&', $params );
 
 	}
-
 
 }

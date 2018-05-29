@@ -2,9 +2,9 @@
         bootstrap="bootstrap.php"
         backupGlobals="false"
         colors="true"
-        convertErrorsToExceptions="true"
-        convertNoticesToExceptions="true"
-        convertWarningsToExceptions="true"
+        convertErrorsToExceptions="false"
+        convertNoticesToExceptions="false"
+        convertWarningsToExceptions="false"
         verbose="true"
 >
     <testsuites>
@@ -18,7 +18,7 @@
     <filter>
         <whitelist>
             <directory suffix=".php">../includes</directory>
-            <file>../component-juicer.php</file>
+            <file>../wp-juicer.php</file>
         </whitelist>
     </filter>
     <logging>
