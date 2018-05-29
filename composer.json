@@ -14,7 +14,8 @@
   ],
   "autoload": {
     "classmap": [
-      "includes"
+      "includes",
+      "wp-juicer.php"
     ]
   },
   "require": {

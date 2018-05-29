@@ -79,11 +79,11 @@ class Juicer {
 				break;
 			}
 
-			set_transient( $key, json_encode( $response ) );
+			set_transient( $key, $response );
 
 		} while ( false );
 
-		$feed = new Feed( $response, $args );
+		$feed = new Feed( json_decode( $response ), $args );
 
 		return $feed;
 

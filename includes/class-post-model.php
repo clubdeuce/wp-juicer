@@ -51,9 +51,9 @@ class Post_Model extends Model_Base {
 	 */
 	public function __construct( $post, $args = array() ) {
 
-		$args = wp_parse_args( $args );
-
-		$args['post'] = $post;
+		$args = wp_parse_args( $args, array(
+			'post' => $post
+		) );
 
 		parent::__construct( $args );
 

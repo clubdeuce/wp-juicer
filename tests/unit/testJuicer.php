@@ -51,7 +51,20 @@ class testJuicer extends TestCase {
 	/**
 	 * @covers ::get_feed
 	 */
-	public function testTransportErrorReturnsWpError() {
+	public function testTransportErrorReturnsCachedFeed() {
+		$transport = \Mockery::mock('HTTP');
+		$transport->shouldReceive('fetch')->andReturn(new \WP_Error());
+
+		set_error_handler(array($this, '_errorHandler'));
+		$this->assertInstanceOf(Feed::class, Juicer::get_feed(array('transport' => $transport)));
+		restore_error_handler();
+	}
+
+	/**
+	 * @covers ::get_feed
+	 * @expectedException \PHPUnit_Framework_Error_Warning
+	 */
+	public function testTransportErrorTriggersError() {
 		$transport = \Mockery::mock('HTTP');
 		$transport->shouldReceive('fetch')->andReturn(new \WP_Error());
 
@@ -59,18 +72,11 @@ class testJuicer extends TestCase {
 	}
 
 	/**
-	 * @param string $errno
-	 * @param string $errstr
-	 * @param string $errfile
-	 * @param string $errline
-	 * @param string $errcontext
-	 *
 	 * @return bool
 	 */
-	public function _errorHandler($errno, $errstr, $errfile, $errline, $errcontext) {
-		$this->_errors[] = compact("errno", "errstr", "errfile",
-			"errline", "errcontext");
+	public function _errorHandler() {
 
 		return true;
+
 	}
 }

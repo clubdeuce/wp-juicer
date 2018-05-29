@@ -44,7 +44,6 @@ class HTTP {
 
 			wp_cache_set( $cache_key, $response, 'juicer', 600 );
 
-			$response = json_decode( $response );
 		} while ( false );
 
 		return $response;

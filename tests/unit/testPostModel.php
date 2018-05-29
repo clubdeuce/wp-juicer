@@ -38,6 +38,17 @@ class testPostModel extends TestCase {
 	}
 
 	/**
+	 * @depends testHasPost
+	 * @covers ::__construct
+	 * @covers \Clubdeuce\WPJuicer\Model_Base::__construct
+	 */
+	public function testInjectedPost() {
+		$model = new Post_Model(null, array('post' => 'foo'));
+
+		$this->assertTrue($model->has_post());
+	}
+
+	/**
 	 * @covers ::timestamp
 	 */
 	public function testTimestamp() {
@@ -73,6 +84,15 @@ class testPostModel extends TestCase {
 		$model = new Post_Model(null);
 
 		$this->assertNull($model->id());
+	}
+
+	/**
+	 * @covers ::__call
+	 */
+	public function testCallNonExistentProperty() {
+		$model = new Post_Model($this->_getSamplePost());
+
+		$this->assertNull($model->foo());
 	}
 
 	/**
