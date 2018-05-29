@@ -62,7 +62,7 @@ class Post_Model extends Model_Base {
 	/**
 	 * @return bool
 	 */
-	function has_post() {
+	public function has_post() {
 
 		$has = false;
 
@@ -79,7 +79,7 @@ class Post_Model extends Model_Base {
 	 *
 	 * @return string
 	 */
-	function timestamp() {
+	public function timestamp() {
 
 		return $this->external_created_at();
 
@@ -88,7 +88,7 @@ class Post_Model extends Model_Base {
 	/**
 	 * @return Source
 	 */
-	function source() {
+	public function source() {
 
 		$source = new Source(null);
 
@@ -105,7 +105,7 @@ class Post_Model extends Model_Base {
 	 * @param  array $args
 	 * @return mixed|null
 	 */
-	function __call( $method_name, $args ) {
+	public function __call( $method_name, $args ) {
 
 		$value = null;
 

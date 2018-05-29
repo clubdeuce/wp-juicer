@@ -77,7 +77,7 @@ class Feed_Model extends Model_Base {
 	/**
 	 * @return bool
 	 */
-	function has_feed() {
+	public function has_feed() {
 
 		$has = false;
 
@@ -101,7 +101,7 @@ class Feed_Model extends Model_Base {
 	/**
 	 * @return Post[]
 	 */
-	function posts() {
+	public function posts() {
 
 		$posts = array();
 
@@ -131,7 +131,7 @@ class Feed_Model extends Model_Base {
 	/**
 	 * @return Source[]
 	 */
-	function sources() {
+	public function sources() {
 
 		do {
 
@@ -141,7 +141,7 @@ class Feed_Model extends Model_Base {
 			}
 
 			foreach( $this->response()->sources as $source ) {
-				$this->_sources[] = new Source( array( 'source_object' => $source ) );
+				$this->_sources[] = new Source( $source );
 			}
 
 			$sources = $this->_sources;

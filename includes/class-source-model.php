@@ -56,7 +56,7 @@ class Source_Model extends Model_Base {
 	 *
 	 * @return mixed|null
 	 */
-	function __call( $method_name, $args ) {
+	public function __call( $method_name, $args ) {
 
 		do {
 			if ( isset( $this->_source_object->{$method_name} ) ) {

@@ -91,7 +91,7 @@ class Juicer {
 	/**
 	 * @param $feed
 	 */
-	static function set_default_feed( $feed ) {
+	public static function set_default_feed( $feed ) {
 
 		static::$_default_feed = $feed;
 

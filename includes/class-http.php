@@ -11,7 +11,7 @@ class HTTP {
 	 * @param  $url
 	 * @return \stdClass|\WP_Error
 	 */
-	function fetch( $url ) {
+	public function fetch( $url ) {
 
 		do {
 			if ( ! wp_http_validate_url( $url ) ) {

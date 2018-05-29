@@ -40,7 +40,7 @@ class Model_Base {
 	 * @param  array $args
 	 * @return null|mixed
 	 */
-	function __call( $method_name, $args ) {
+	public function __call( $method_name, $args ) {
 
 		do {
 			if ( property_exists( __CLASS__, "_{$method_name}" ) ) {
