@@ -9,7 +9,7 @@ class HTTP {
 
 	/**
 	 * @param  $url
-	 * @return \stdClass|\WP_Error
+	 * @return string|\WP_Error
 	 */
 	public function fetch( $url ) {
 
