@@ -1,0 +1,7 @@
+vendor
+reports
+wordpress
+wp
+wp-tests
+phpunit.xml
+composer.lock

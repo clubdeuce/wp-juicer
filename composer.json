@@ -1,0 +1,39 @@
+{
+  "name": "clubdeuce/wp-juicer",
+  "type": "library",
+  "description": "A Juicer library for WordPress.",
+  "keywords": [ "wordpress", "php", "library", "juicer", "social feed aggregation" ],
+  "homepage": "http://github.com/clubdeuce/wp-juicer",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Daryl Lozupone",
+      "email": "daryl@clubdeuce.net",
+      "role" :  "DevOp and Developer"
+    }
+  ],
+  "autoload": {
+    "classmap": [
+      "includes"
+    ]
+  },
+  "require": {
+    "php": ">=5.6.0"
+  },
+  "require-dev": {
+    "johnpbloch/wordpress": "4.9.5",
+    "phpunit/phpunit": "5.6.2",
+    "mockery/mockery": "1.1.0",
+    "consolidation/robo": "^1.1",
+    "patchwork/jsqueeze": "^2.0",
+    "natxet/CssMin": "~3.0"
+  },
+  "extra": {
+    "wordpress-install-dir": "wp"
+  },
+  "support": {
+    "issues": "https://github.com/clubdeuce/wp-juicer/issues",
+    "source":"https://github.com/clubdeuce/wp-juicer",
+    "docs": "https://github.com/clubdeuce/wp-juicer/wiki"
+  }
+}
