@@ -27,10 +27,10 @@ $feed = Juicer::get_feed( array(
     'feed' => 'my_feed_name';
 ));
 
-$feed->the_template_html();
+$feed->the_feed_html();
 ```
 
-All parameters have a default value set _*except for feed name*_, but
+All parameters have a default value set _*( except for feed name )*_, but
 you can set these to any allowed value. For example, one hundred is the 
 default number of posts to retrieve. To only retrieve five:
 
@@ -48,3 +48,15 @@ The following parameters can be set when getting a feed:
 |filter|string|empty|Pass in either a name of a social account (capitalized) like "Facebook" or "LinkedIn" to only show posts from that source (if you have two Facebook sources it will show the posts from both). Or pass in the name on the account to only show posts from that particular source. For example, if I had an instagram source of #tbt in my feed I could pass in tbt to only show posts from that source.|
 |starting_at|string|empty|Pass in a date in the format YYYY-MM-DD HH:MM (HH:MM optional) to show posts newer than this date.|
 |ending_at|string|empty|Pass in a date in the format YYYY-MM-DD HH:MM (HH:MM optional) to show posts older than this date.|
+
+### Front End Display
+
+This library provides a minimal template for displaying feed items. It
+is used in `Feed::the_feed_html()`. There is
+no CSS currently in place for this. You can specify your own CSS,
+and can even specify a different template. To use a different template:
+
+```
+$feed->the_feed_html( array( 'template' => 'path/to/template' ) );
+```
+ 
