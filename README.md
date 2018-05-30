@@ -30,9 +30,9 @@ $feed = Juicer::get_feed(array(
 $feed->the_template_html();
 ```
 
-All parameters have a default value set, but you can set these to any
-allowed value. For example, one hundred is the default number of posts
-to retrieve. To only retrieve five:
+All parameters have a default value set _*except for feed name*_, but
+you can set these to any allowed value. For example, one hundred is the 
+default number of posts to retrieve. To only retrieve five:
 
 ```
 $feed = Juicer::get_feed(array('per' => 5));
