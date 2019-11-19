@@ -1,14 +1,14 @@
 language: php
 php:
+  - 7.3
+  - 7.2
   - 7.1
 
 env:
-  - WP_VERSION="4.9.6"
-  - WP_VERSION="4.9.5"
-  - WP_VERSION="4.9.4"
-  - WP_VERSION="4.9.3"
-  - WP_VERSION="4.9.2"
-  - WP_VERSION="4.9.1"
+  - WP_VERSION="5.3"
+  - WP_VERSION="5.2.4"
+  - WP_VERSION="5.2.3"
+  - WP_VERSION="5.2.2"
 
 mysql:
   database: test_db
